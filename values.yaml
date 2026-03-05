@@ -1,0 +1,59 @@
+# Default values for signoz-cloud-agent.
+
+replicaCount: 1
+
+image:
+  repository: signoz/cloud-integration-agent
+  pullPolicy: IfNotPresent
+  tag: ""
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+# Environment variables for the agent container.
+env:
+  SIGNOZ_API_URL: ""
+  SIGNOZ_API_KEY: ""
+  SIGNOZ_CLOUD_INTEGRATION_ACCOUNT_ID: ""
+  INGESTION_URL: ""
+  INGESTION_KEY: ""
+  FIREHOSE_STREAM_ROLE_ARN: ""
+  FIREHOSE_WRITER_ROLE_ARN: ""
+  FORWARDER_ROLE_ARN: ""
+  INTEGRATION_CONFIG_SYNC_PERIOD_SECONDS: "30"
+  INTEGRATION_AGENT_STACK_REGION: ""
+  INTEGRATION_AGENT_STACK_NAME: ""
+  CLOUD_PROVIDER: "aws"
+
+# Optional: reference to a K8s Secret for sensitive values (SIGNOZ_API_KEY, INGESTION_KEY, etc.)
+existingSecret: ""
+
+serviceAccount:
+  create: true
+  automount: true
+  # Annotations to add to the service account (e.g. for IRSA or Pod Identity).
+  annotations: {}
+  name: ""
+
+podAnnotations: {}
+podLabels: {}
+
+podSecurityContext: {}
+
+securityContext: {}
+
+resources:
+  requests:
+    cpu: 256m
+    memory: 512Mi
+
+volumes: []
+
+volumeMounts: []
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}

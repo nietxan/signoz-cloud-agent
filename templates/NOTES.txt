@@ -1,0 +1,12 @@
+SigNoz Cloud Integration Agent has been deployed.
+
+Release: {{ .Release.Name }}
+Namespace: {{ .Release.Namespace }}
+
+The agent is running as a background process with no exposed ports.
+
+To check status:
+  kubectl get pods --namespace {{ .Release.Namespace }} -l "app.kubernetes.io/name={{ include "signoz-cloud-agent.name" . }},app.kubernetes.io/instance={{ .Release.Name }}"
+
+To view logs:
+  kubectl logs --namespace {{ .Release.Namespace }} -l "app.kubernetes.io/name={{ include "signoz-cloud-agent.name" . }},app.kubernetes.io/instance={{ .Release.Name }}"
