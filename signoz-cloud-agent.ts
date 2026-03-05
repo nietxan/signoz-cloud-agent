@@ -164,6 +164,24 @@ export class SigNozCloudAgent {
                     }),
                 },
                 {
+                    name: "signoz-integration-cf-stack-manager",
+                    policy: JSON.stringify({
+                        Version: "2012-10-17",
+                        Statement: [
+                            {
+                                Effect: "Allow",
+                                Action: "cloudformation:*",
+                                Resource: [`arn:aws:cloudformation:*:${accountId}:stack/signoz*`],
+                            },
+                            {
+                                Effect: "Allow",
+                                Action: "cloudformation:ValidateTemplate",
+                                Resource: "*",
+                            },
+                        ],
+                    }),
+                },
+                {
                     name: "signoz-integration-firehose-manager",
                     policy: JSON.stringify({
                         Version: "2012-10-17",
