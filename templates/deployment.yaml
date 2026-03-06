@@ -40,8 +40,10 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           env:
             {{- range $key, $value := .Values.env }}
+            {{- if $value }}
             - name: {{ $key }}
               value: {{ $value | quote }}
+            {{- end }}
             {{- end }}
           {{- if .Values.existingSecret }}
           envFrom:

@@ -3,12 +3,12 @@ entries:
   signoz-cloud-agent:
   - apiVersion: v2
     appVersion: v0.0.8
-    created: "2026-03-05T15:53:56.892076+05:00"
+    created: "2026-03-06T15:04:47.799999+05:00"
     description: Helm Chart for Deploying SigNoz AWS Cloud Agent
-    digest: 5c1252b8342407f396da93e69aa56319d304cfe074e4916e6bfe7542f214aa9b
+    digest: f2025ef6735a09e2aaa83c1463c9cbe143313e1b4227002ec7e8eae6f0b11e36
     name: signoz-cloud-agent
     type: application
     urls:
     - signoz-cloud-agent-0.1.0.tgz
     version: 0.1.0
-generated: "2026-03-05T15:53:56.891482+05:00"
+generated: "2026-03-06T15:04:47.799423+05:00"
